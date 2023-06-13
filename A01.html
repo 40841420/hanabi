@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>購物網站</title>
+    <style>
+        /* 全域樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 頁首樣式 */
+        /* .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        } */
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .header nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* 漢堡選單 */
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .header nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .header nav ul li {
+            margin-left: 20px;
+        }
+
+        /* 主橫幅樣式 */
+        .hero {
+            background-color: #f2f2f2;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            color: #333;
+        }
+
+        .hero p {
+            color: #666;
+        }
+
+        .cta-button {
+            background-color: #ff5c00;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* 產品推薦區樣式 */
+        .featured-products {
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .product-item {
+            width: 200px;
+            margin: 0 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+        }
+
+        .product-item h3 {
+            margin: 10px 0;
+        }
+
+        .product-item p {
+            color: #666;
+        }
+
+        .product-item button {
+            background-color: #ff5c00;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* 促銷活動區樣式 */
+        .promotions {
+            padding: 50px;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .promotion-banner img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 最新消息區樣式 */
+        .latest-news {
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .news-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .news-list li {
+            margin-bottom: 10px;
+        }
+
+        /* 合作夥伴區樣式 */
+        .partners {
+            padding: 50px;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .partner-logos img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+
+        /* 頁尾樣式 */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .footer nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+        }
+
+        .social-media a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+            background-color: #fff;
+        }
+
+        .social-media a.icon-facebook {
+            background-image: url("facebook.png");
+            background-size: cover;
+        }
+
+        .social-media a.icon-instagram {
+            background-image: url("instagram.png");
+            background-size: cover;
+        }
+
+        .social-media a.icon-twitter {
+            background-image: url("twitter.png");
+            background-size: cover;
+        }
+
+        /* CSS 樣式省略 */
+
+        /* 響應式網頁設計 */
+        @media screen and (max-width: 768px) {
+            .header {
+                padding: 10px;
+            }
+
+            .header .main-menu {
+                flex-direction: column;
+            }
+
+            .header .menu-icon {
+                display: block;
+            }
+
+            .header .main-menu ul {
+                display: none;
+                margin-top: 10px;
+            }
+
+            .header .main-menu ul li {
+                display: block;
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .header .menu-toggle:checked ~ .main-menu ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+
+            .hero {
+                padding: 30px;
+            }
+
+            .featured-products .product-list {
+                flex-wrap: wrap;
+            }
+
+            .featured-products .product-item {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .promotions .promotion-banner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .promotions .promotion-banner img {
+                max-width: 80%;
+            }
+
+            .latest-news .news-list li {
+                padding: 5px;
+                background-color: #f2f2f2;
+                border-radius: 5px;
+            }
+
+            .partners .partner-logos img {
+                width: 80px;
+                height: 80px;
+                margin: 10px;
+            }
+
+            .footer nav ul li {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .social-media a {
+                margin-right: 5px;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1>購物網站</h1>
+            <!-- <input type="checkbox" id="menu-toggle" class="menu-toggle"> -->
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="#">首頁</a></li>
+                    <li><a href="#">產品分類</a></li>
+                    <li><a href="#">購物車</a></li>
+                    <li><a href="#">帳戶</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>歡迎光臨我們的購物網站</h2>
+        <p>這裡有各種優質產品等待您的選擇</p>
+        <a href="#" class="cta-button">立即購買</a>
+    </section>
+
+    <section class="featured-products">
+        <h2>熱門產品</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="01.jpg" alt="產品圖片">
+                <h3>產品名稱1</h3>
+                <p>產品描述1</p>
+                <p>價格: $99.99</p>
+                <button>加入購物車</button>
+            </div>
+            <div class="product-item">
+                <img src="02.jpg" alt="產品圖片">
+                <h3>產品名稱2</h3>
+                <p>產品描述2</p>
+                <p>價格: $49.99</p>
+                <button>加入購物車</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="promotions">
+        <h2>促銷活動</h2>
+        <div class="promotion-banner">
+            <img src="02.jpg" alt="促銷活動圖片">
+            <p>限時優惠！立即購買享受折扣！</p>
+        </div>
+    </section>
+
+    <section class="latest-news">
+        <h2>最新消息</h2>
+        <ul class="news-list">
+            <li>新品上市，快來看看吧！</li>
+            <li>聖誕特惠活動開始啦！</li>
+            <li>感恩回饋，結帳再送折扣券！</li>
+        </ul>
+    </section>
+
+    <section class="partners">
+        <h2>合作夥伴</h2>
+        <div class="partner-logos">
+            <img src="partner1.jpg" alt="合作夥伴1">
+            <img src="partner2.jpg" alt="合作夥伴2">
+            <img src="partner3.jpg" alt="合作夥伴3">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <nav>
+            <ul>
+                <li><a href="#">關於我們</a></li>
+                <li><a href="#">聯絡我們</a></li>
+                <li><a href="#">隱私政策</a></li>
+            </ul>
+        </nav>
+        <div class="contact-info">
+            <p>聯絡電話: 123-456-7890</p>
+            <p>電子郵件: info@example.com</p>
+        </div>
+        <div class="social-media">
+            <a href="#" class="icon-facebook"></a>
+            <a href="#" class="icon-instagram"></a>
+            <a href="#" class="icon-twitter"></a>
+        </div>
+    </footer>
+</body>
+
+</html>
